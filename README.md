@@ -239,6 +239,8 @@ pnpm build
 
 本项目提交规范校验使用 [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) 作为 git hooks，使用 [cz-git](https://github.com/Zhengqbbb/cz-git) 作为 commitlint commitizen。
 
+> rule由name和配置数组组成，如：'name:[0, 'always', 72]'，数组中第一位为level，可选0,1,2，0为disable，1为warning，2为error，第二位为应用与否，可选always|never，第三位该rule的值
+
 > [!IMPORTANT]
 >
 > ```shell
@@ -284,6 +286,14 @@ simple-git-hooks 和 husky 都是用于管理 Git 钩子（Git hooks）的工具
   }
 }
 ```
+
+##### git提交案例
+
+- 方案1： git commit -m "<type>: <subject>" // 提交格式（注意冒号后面有空格）
+- 方案2：（推荐）
+  - git add .
+  - git cz //根据提示指导填写
+  - git push
 
 ## 浏览器支持
 

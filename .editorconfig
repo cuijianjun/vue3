@@ -36,7 +36,9 @@ indent_style = space
 indent_size = 2
 
 [*.md]
-# 删除一行中的前后空格
+# 表示仅 md 文件适用以下规则
+max_line_length = off
+# 删除一行中的前后空格 
 trim_trailing_whitespace = false
 
 [Makefile]
