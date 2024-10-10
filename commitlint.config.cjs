@@ -4,8 +4,8 @@ const path = require('node:path')
 const { execSync } = require('node:child_process')
 
 const scopes = fs
-  .readdirSync(path.resolve(__dirname, 'src'), { withFileTypes: true })
-  .filter(dirent => dirent.isDirectory())
+  .readdirSync(path.resolve(__dirname, './'), { withFileTypes: true })
+  // .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name.replace(/s$/, ''))
 
 // precomputed scope
