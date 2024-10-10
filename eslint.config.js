@@ -15,7 +15,6 @@ export default antfu({
   // parserOptions: {
   //   ecmaVersion: 'latest',
   // },
-  unocss: true,
   stylistic: {
     indent: 2, // 4, or 'tab'
     quotes: 'single', // or 'double'

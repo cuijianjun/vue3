@@ -2,7 +2,8 @@ import type { PluginOption } from 'vite'
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
-import UnoCSS from 'unocss/vite'
+
+// import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { configHtmlPlugin } from './html'
 import { configMockPlugin } from './mock'
@@ -34,7 +35,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, prodMock: 
       types: [],
     }),
     // UnoCSS
-    UnoCSS(),
+    // UnoCSS(),
 
     AutoImport({
       // targets to transform
