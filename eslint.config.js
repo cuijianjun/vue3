@@ -2,11 +2,25 @@
 import antfu from '@antfu/eslint-config'
 
 export default antfu({
+  // ESLint 一旦发现配置文件中有 "root": true，它就会停止在父级目录中寻找。
+  // root: true,
+  // // 继承下面的规则
+  // extends: [
+  //   'plugin:vue/vue3-essential',
+  //   'eslint:recommended',
+  //   '@vue/eslint-config-typescript',
+  //   '@vue/eslint-config-prettier',
+  // ],
+  // // 使用使用最新版的 ECMAScript 进行语法解析
+  // parserOptions: {
+  //   ecmaVersion: 'latest',
+  // },
   unocss: true,
   stylistic: {
     indent: 2, // 4, or 'tab'
     quotes: 'single', // or 'double'
   },
+  yaml: false,
   // 使用外部格式化程序来格式化 ESLint 无法处理的文件（ .css 、 .html 等）
   formatters: {
     css: true,
