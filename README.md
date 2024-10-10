@@ -20,7 +20,6 @@
 
 ## 介绍
 
-
 👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.4`、`Vite5`、`Vant4`、`Pinia`、`TypeScript`、`UnoCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了登录/注册/找回密码 页面（包括逻辑），只需替换你的 API 即可，另外页面均可以 `<keep-alive>`，随便写了个包含 `NavBar`、`TabBar` 的 Layout，集成了 `Axios`、`useECharts`、`IconSvg`。
 
 项目使用了 [antfu](https://github.com/antfu) 大佬的 [antfu/eslint-config](https://github.com/antfu/eslint-config) 作为代码规范检查工具，摆脱繁琐无聊的 Eslint 配置，配合 `cz-git`、 `lint-staged`、`simple-git-hooks`可对暂存区代码提交校验，代码风格不合格可打断提交，保证多人协作开发时上游 Git 库的干净。
@@ -268,7 +267,7 @@ simple-git-hooks 和 husky 都是用于管理 Git 钩子（Git hooks）的工具
 >   - 提供了丰富的配置选项和灵活性，可以精细地控制 Git 钩子的行为。
 >   - 支持在不同的 Git 钩子事件上运行自定义脚本。
 >   - 可以与其他工具（如linters、测试框架等）集成，实现更复杂的工作流。
->   - 使用场景: 适用于需要灵活配置和管理 Git 钩子的项目，尤其是大型或复杂的项目。
+>   - 使用场景: 适用于需要灵活配置和管理 Git 钩子的项目，尤其是大型或复杂的项目。sss
 
 ```json
 // package.json
