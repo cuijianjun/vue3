@@ -3,12 +3,11 @@
  */
 import fs from 'fs-extra'
 import colors from 'picocolors'
-import { GLOB_CONFIG_FILE_NAME, OUTPUT_DIR } from '../constant'
-
-import { getEnvConfig, getRootPath } from '../utils'
-import { getConfigFileName } from '../getConfigFileName'
 
 import pkg from '../../package.json'
+import { GLOB_CONFIG_FILE_NAME, OUTPUT_DIR } from '../constant'
+import { getConfigFileName } from '../getConfigFileName'
+import { getEnvConfig, getRootPath } from '../utils'
 
 function createConfig(
   {

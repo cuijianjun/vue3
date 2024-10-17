@@ -34,7 +34,7 @@
     "mock/**/*.ts",
     "vite.config.ts"
   ],
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  "exclude": ["node_modules", "dist", "**/*.js", "**/*.cjs"]
 }
 
 // tsconfig.json文件 compilerOptions 常用配置 https://juejin.cn/post/7091530360114118670

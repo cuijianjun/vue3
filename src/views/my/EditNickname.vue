@@ -30,8 +30,10 @@
 <script setup lang="ts">
 import type { FormInstance } from 'vant'
 import { showToast } from 'vant'
-import NavBar from './components/NavBar.vue'
+
 import { useUserStore } from '@/store/modules/user'
+
+import NavBar from './components/NavBar.vue'
 
 const userStore = useUserStore()
 
@@ -44,7 +46,7 @@ const formValue = reactive({
 
 function validateNickname() {
   return async (value: string) => {
-    const pattern = /^[\u4E00-\u9FA5A-Za-z0-9-_.·]+$/
+    const pattern = /^[\u4E00-\u9FA5\w\-.·]+$/
     if (!pattern.test(value)) {
       return Promise.resolve('请输入正确内容')
     }

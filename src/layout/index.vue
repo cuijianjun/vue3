@@ -36,8 +36,9 @@
 <script setup lang="ts">
 import type { ComputedRef } from 'vue'
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import { useRoute } from 'vue-router'
+
 import { useRouteStore } from '@/store/modules/route'
 
 const routeStore = useRouteStore()

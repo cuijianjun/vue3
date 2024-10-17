@@ -1,5 +1,3 @@
-import * as echarts from 'echarts/core'
-
 import {
   BarChart,
   GaugeChart,
@@ -9,7 +7,6 @@ import {
   PieChart,
   RadarChart,
 } from 'echarts/charts'
-
 import {
   AriaComponent,
   CalendarComponent,
@@ -26,7 +23,7 @@ import {
   TooltipComponent,
   VisualMapComponent,
 } from 'echarts/components'
-
+import * as echarts from 'echarts/core'
 import { SVGRenderer } from 'echarts/renderers'
 
 echarts.use([

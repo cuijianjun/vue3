@@ -50,6 +50,7 @@ export function createStorage({ prefixKey = '', storage = localStorage } = {}) {
           this.remove(key)
         }
         catch (e) {
+          console.log(e)
           return def
         }
       }

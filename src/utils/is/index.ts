@@ -10,9 +10,16 @@ export function is(val: unknown, type: string) {
 /**
  * @description:  是否为函数
  */
-export function isFunction<T = Function>(val: unknown): val is T {
+export function isFunction(val: unknown): boolean {
   return is(val, 'Function')
 }
+// 替换为下面的写法解决eslint报错
+/**
+ * @description:  是否为函数
+ */
+// export function isFunction(val: unknown): boolean {
+//   return typeof val === 'function'
+// }
 
 /**
  * @description: 是否已定义

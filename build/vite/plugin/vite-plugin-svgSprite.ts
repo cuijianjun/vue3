@@ -4,6 +4,7 @@
  */
 
 import path from 'node:path'
+
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export function configSvgIconsPlugin(isBuild: boolean) {

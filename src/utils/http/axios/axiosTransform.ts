@@ -2,6 +2,7 @@
  * 数据处理类，可以根据项目自行配置
  */
 import type { AxiosRequestConfig, AxiosResponse } from 'axios'
+
 import type { RequestOptions, Result } from './types'
 
 export interface CreateAxiosOptions extends AxiosRequestConfig {

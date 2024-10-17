@@ -4,6 +4,7 @@
  */
 import type { PluginOption } from 'vite'
 import { createHtmlPlugin } from 'vite-plugin-html'
+
 import pkg from '../../../package.json'
 import { GLOB_CONFIG_FILE_NAME } from '../../constant'
 

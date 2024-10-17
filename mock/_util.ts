@@ -1,4 +1,5 @@
 import Mock from 'mockjs'
+
 import { ResultEnum } from '@/enums/httpEnum'
 
 export function resultSuccess<T = Recordable>(result: T, { message = 'ok' } = {}) {

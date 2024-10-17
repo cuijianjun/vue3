@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import type { EChartsOption } from 'echarts'
+
 import { useECharts } from '@/hooks/web/useECharts'
 
 const chartRef = ref<HTMLDivElement | null>(null)

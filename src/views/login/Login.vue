@@ -13,11 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import LoginTitle from './LoginTitle.vue'
-import LoginForm from './LoginForm.vue'
 import ForgetPasswordForm from './ForgetPasswordForm.vue'
-import RegisterForm from './RegisterForm.vue'
+import LoginForm from './LoginForm.vue'
+import LoginTitle from './LoginTitle.vue'
 import LoginWave from './LoginWave.vue'
+import RegisterForm from './RegisterForm.vue'
 </script>
 
 <style scoped lang="less">

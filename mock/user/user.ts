@@ -1,7 +1,9 @@
 import type { MockMethod } from 'vite-plugin-mock'
+
+import { ResultEnum } from '@/enums/httpEnum'
+
 import type { requestParams } from '../_util'
 import { getRequestToken, resultError, resultSuccess } from '../_util'
-import { ResultEnum } from '@/enums/httpEnum'
 
 const fakeUserList = [
   {

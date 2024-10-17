@@ -1,6 +1,5 @@
 import type { AxiosRequestConfig, Canceler } from 'axios'
 import axios from 'axios'
-
 import qs from 'qs'
 
 import { isFunction } from '@/utils/is'

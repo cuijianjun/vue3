@@ -1,15 +1,20 @@
-import type { PluginOption } from 'vite'
-import Components from 'unplugin-vue-components/vite'
-import { VantResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
+// import Components from 'unplugin-vue-components/vite'
+import type { PluginOption } from 'vite'
 
 // import UnoCSS from 'unocss/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import { configHtmlPlugin } from './html'
-import { configMockPlugin } from './mock'
-import { configCompressPlugin } from './compress'
-import { configVisualizerConfig } from './visualizer'
-import { configSvgIconsPlugin } from './svgSprite'
+// import AutoImport from 'unplugin-auto-import/vite'
+import { AutoImport } from './plugin/unplugin-auto-import'
+import { Components } from './plugin/unplugin-vue-components'
+import { configCompressPlugin } from './plugin/vite-plugin-compress'
+import { configHtmlPlugin } from './plugin/vite-plugin-html'
+import { legacyPlugin } from './plugin/vite-plugin-legacy'
+import { configMockPlugin } from './plugin/vite-plugin-mock'
+import { Progress } from './plugin/vite-plugin-progress'
+import { configSvgIconsPlugin } from './plugin/vite-plugin-svgSprite'
+import { configVisualizerConfig } from './plugin/vite-plugin-visualizer'
+import { vueSetupExtend } from './plugin/vite-plugin-vue-setup-extend'
+import { vitePluginZip } from './plugin/vite-plugin-zip'
 
 /**
  * 配置 vite 插件
@@ -29,30 +34,14 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, prodMock: 
     // have to
     vue(),
     // 按需引入VantUi且自动创建组件声明
-    Components({
-      dts: true,
-      resolvers: [VantResolver()],
-      types: [],
-    }),
+    Components(),
     // UnoCSS
     // UnoCSS(),
-
-    AutoImport({
-      // targets to transform
-      include: [
-        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-        /\.vue$/,
-        /\.vue\?vue/, // .vue
-      ],
-      imports: [
-        // presets
-        'vue',
-        'vue-router',
-        'pinia',
-        '@vueuse/core',
-      ],
-      dts: 'types/auto-imports.d.ts',
-    }),
+    AutoImport(),
+    legacyPlugin(),
+    Progress(),
+    vueSetupExtend(),
+    vitePluginZip(),
   ]
 
   // 加载 html 插件 vite-plugin-html

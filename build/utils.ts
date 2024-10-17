@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+
 import dotenv from 'dotenv'
 
 export function isDevFn(mode: string): boolean {
@@ -34,7 +35,9 @@ export function wrapperEnv(envConf: Recordable): ViteEnv {
       try {
         realName = JSON.parse(realName)
       }
-      catch (error) {}
+      catch (error) {
+        console.log(error)
+      }
     }
     ret[envName] = realName
     process.env[envName] = realName
@@ -54,7 +57,9 @@ export function getEnvConfig(match = 'VITE_GLOB_', confFiles = ['.env', '.env.pr
       const env = dotenv.parse(fs.readFileSync(path.resolve(process.cwd(), item)))
       envConfig = { ...envConfig, ...env }
     }
-    catch (error) {}
+    catch (error) {
+      console.log(error)
+    }
   })
 
   Object.keys(envConfig).forEach((key) => {

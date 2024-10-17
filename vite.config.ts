@@ -1,11 +1,13 @@
 import { resolve } from 'node:path'
+
+import { format } from 'date-fns'
 import type { ConfigEnv, UserConfig } from 'vite'
 import { loadEnv } from 'vite'
-import { format } from 'date-fns'
-import { wrapperEnv } from './build/utils'
-import { createVitePlugins } from './build/vite/plugin'
+
 import { OUTPUT_DIR } from './build/constant'
-import { createProxy } from './build/vite/proxy'
+import { wrapperEnv } from './build/utils'
+import { createVitePlugins } from './build/vite/index'
+import { createProxy } from './build/vite/plugin/vite-plugin-proxy'
 import pkg from './package.json'
 
 const { dependencies, devDependencies, name, version } = pkg
@@ -50,12 +52,12 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       alias: [
         // @/xxxx => src/xxxx
         {
-          find: /\@\//,
+          find: /@\//,
           replacement: `${pathResolve('src')}/`,
         },
         // #/xxxx => types/xxxx
         {
-          find: /\#\//,
+          find: /#\//,
           replacement: `${pathResolve('types')}/`,
         },
       ],

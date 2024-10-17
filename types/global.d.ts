@@ -1,8 +1,8 @@
 import type {
   ComponentPublicInstance,
   FunctionalComponent,
-  VNodeChild,
   PropType as VuePropType,
+  VNodeChild,
 } from 'vue'
 
 // declare global 在具有 import 或 export 声明全局范围内的事物的文件中使用。

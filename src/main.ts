@@ -1,19 +1,20 @@
 import 'amfe-flexible'
-import 'vant/es/toast/style'
-import 'vant/es/dialog/style'
 import 'vant/es/notify/style'
+import 'vant/es/toast/style'
 import 'vant/es/image-preview/style'
-
 // https://unocss.dev/guide/style-reset#tailwind-compat
 // 此重置基于 Tailwind 重置，减去按钮的背景颜色覆盖，以避免与 UI 框架发生冲突。请参阅链接的问题。
 // import '@unocss/reset/tailwind-compat.css'
-
 // Register icon sprite
 // import 'virtual:svg-icons-register'
+import 'vant/es/dialog/style'
+
 import { createApp } from 'vue'
+
+import { setupStore } from '@/store'
+
 import App from './App.vue'
 import router, { setupRouter } from './router'
-import { setupStore } from '@/store'
 
 async function bootstrap() {
   const app = createApp(App)

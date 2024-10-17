@@ -65,6 +65,7 @@
 
 <script setup lang="ts">
 import type { FormInstance } from 'vant'
+
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
 
 const { handleBackLogin, getLoginState } = useLoginState()

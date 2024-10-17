@@ -113,11 +113,13 @@
 
 <script setup lang="ts">
 import { showToast } from 'vant'
+
+import { useUserStore } from '@/store/modules/user'
+
 import NavBar from './components/NavBar.vue'
 import UploaderImage from './components/UploaderImage.vue'
 import type { FormColumns } from './pickColumns'
 import { genderColumns, industryColumns } from './pickColumns'
-import { useUserStore } from '@/store/modules/user'
 
 const userStore = useUserStore()
 const { avatar, gender, industry, cover } = userStore.getUserInfo

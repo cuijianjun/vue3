@@ -2,23 +2,22 @@
 import type { AxiosResponse } from 'axios'
 import axios from 'axios'
 import { showDialog, showFailToast } from 'vant'
+
+import { ContentTypeEnum, RequestEnum, ResultEnum } from '@/enums/httpEnum'
+import { PageEnum } from '@/enums/pageEnum'
+import { useGlobSetting } from '@/hooks/setting'
+import router from '@/router'
+import { useUserStoreWidthOut } from '@/store/modules/user'
+import { deepMerge, isUrl } from '@/utils'
+import { isString } from '@/utils/is/'
+import { storage } from '@/utils/Storage'
+import { setObjToUrlParams } from '@/utils/urlUtils'
+
 import { VAxios } from './Axios'
 import type { AxiosTransform } from './axiosTransform'
 import { checkStatus } from './checkStatus'
 import { formatRequestDate, joinTimestamp } from './helper'
 import type { CreateAxiosOptions, RequestOptions, Result } from './types'
-import { ContentTypeEnum, RequestEnum, ResultEnum } from '@/enums/httpEnum'
-import { PageEnum } from '@/enums/pageEnum'
-import { useGlobSetting } from '@/hooks/setting'
-
-import { isString } from '@/utils/is/'
-import { deepMerge, isUrl } from '@/utils'
-import { setObjToUrlParams } from '@/utils/urlUtils'
-
-import { useUserStoreWidthOut } from '@/store/modules/user'
-
-import router from '@/router'
-import { storage } from '@/utils/Storage'
 
 const globSetting = useGlobSetting()
 const urlPrefix = globSetting.urlPrefix || ''

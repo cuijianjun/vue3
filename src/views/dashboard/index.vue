@@ -26,9 +26,9 @@
 </template>
 
 <script setup lang="ts">
-import { useDesignSettingStore } from '@/store/modules/designSetting'
-import { useGlobSetting } from '@/hooks/setting'
 import Logo from '@/components/Logo.vue'
+import { useGlobSetting } from '@/hooks/setting'
+import { useDesignSettingStore } from '@/store/modules/designSetting'
 
 defineOptions({
   name: 'DashboardPage',

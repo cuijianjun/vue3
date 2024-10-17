@@ -69,9 +69,11 @@
 
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
-import NavBar from './components/NavBar.vue'
-import { useDesignSettingStore } from '@/store/modules/designSetting'
+
 import { animates as animateOptions } from '@/settings/animateSetting'
+import { useDesignSettingStore } from '@/store/modules/designSetting'
+
+import NavBar from './components/NavBar.vue'
 
 const designStore = useDesignSettingStore()
 

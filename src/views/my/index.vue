@@ -64,6 +64,7 @@
 
 <script lang="ts" setup>
 import { showToast } from 'vant'
+
 import { useUserStore } from '@/store/modules/user'
 
 const userStore = useUserStore()

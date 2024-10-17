@@ -34,8 +34,9 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
 import { useUserStore } from '@/store/modules/user'
+
+import NavBar from './components/NavBar.vue'
 
 const userStore = useUserStore()
 const { username, phone } = userStore.getUserInfo

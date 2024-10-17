@@ -1,11 +1,12 @@
 import { defineStore } from 'pinia'
-import { createStorage } from '@/utils/Storage'
-import { store } from '@/store'
-import { ACCESS_TOKEN, CURRENT_USER } from '@/store/mutation-types'
-import { ResultEnum } from '@/enums/httpEnum'
+
 import { doLogout, getUserInfo, login } from '@/api/system/user'
+import { ResultEnum } from '@/enums/httpEnum'
 import { PageEnum } from '@/enums/pageEnum'
 import router from '@/router'
+import { store } from '@/store'
+import { ACCESS_TOKEN, CURRENT_USER } from '@/store/mutation-types'
+import { createStorage } from '@/utils/Storage'
 
 const Storage = createStorage({ storage: localStorage })
 

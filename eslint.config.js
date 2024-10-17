@@ -1,16 +1,18 @@
 // eslint.config.js
 import antfu from '@antfu/eslint-config'
+// import typeScriptEslint from '@typescript-eslint/eslint-plugin'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
 
 export default antfu({
   // ESLint 一旦发现配置文件中有 "root": true，它就会停止在父级目录中寻找。
-  // root: true,
+  root: true,
   // // 继承下面的规则
-  // extends: [
-  //   'plugin:vue/vue3-essential',
-  //   'eslint:recommended',
-  //   '@vue/eslint-config-typescript',
-  //   '@vue/eslint-config-prettier',
-  // ],
+  extends: [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    '@vue/eslint-config-typescript',
+    '@vue/eslint-config-prettier',
+  ],
   // // 使用使用最新版的 ECMAScript 进行语法解析
   // parserOptions: {
   //   ecmaVersion: 'latest',
@@ -28,7 +30,16 @@ export default antfu({
   },
   // https://alloyteam.github.io/eslint-config-alloy/?language=zh-CN&rule=base
   // https://eslint.vuejs.org/rules/
+  plugins: {
+    'simple-import-sort': simpleImportSort,
+  },
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 'latest',
+  },
+
   rules: {
+    // '@typescript-eslint/ban-types':'error',
     'no-console': 'off',
     // 强制组件顶级元素的顺序
     'vue/block-order': [
@@ -70,5 +81,44 @@ export default antfu({
     'node/prefer-global/process': 'off',
     // 对所有控制语句强制执行一致的大括号样式，（只有一行的时候eslint默认是不需要大括号的，这样会降低代码清晰度）
     'curly': ['error', 'all'],
+    'ts/no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
+    'regexp/no-unused-capturing-group': ['error', {
+      fixable: true,
+      allowNamed: true,
+    }],
+    'perfectionist/sort-imports': 'off',
+    'perfectionist/sort-exports': 'off',
+    'perfectionist/sort-named-exports': 'off',
+    // 'sort-imports': [0, {
+    //   ignoreCase: false,
+    //   ignoreDeclarationSort: false,
+    //   ignoreMemberSort: false,
+    //   memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+    // }],
+    'import/order': 'off',
+    'sort-imports': 'off',
+    'sort-exports': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    // '@typescript-eslint/ban-types': 0,
+    // "@typescript-eslint/ban-types": ["error",
+    //   {
+    //     "types": {
+    //       "String": false,
+    //       "Boolean": false,
+    //       "Number": false,
+    //       "Symbol": false,
+    //       "{}": false,
+    //       "Object": false,
+    //       "object": false,
+    //       "Function": false,
+    //     },
+    //     "extendDefaults": true
+    //   }
+    // ]
+
   },
 })

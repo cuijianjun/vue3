@@ -3,7 +3,6 @@
  * https://github.com/anncwb/vite-plugin-compression
  */
 import type { PluginOption } from 'vite'
-
 import compressPlugin from 'vite-plugin-compression'
 
 export function configCompressPlugin(

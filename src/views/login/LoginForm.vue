@@ -59,12 +59,14 @@
 </template>
 
 <script setup lang="ts">
-import { showFailToast, showLoadingToast, showSuccessToast } from 'vant'
 import type { FormInstance } from 'vant'
-import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
-import { useUserStore } from '@/store/modules/user'
+import { showFailToast, showLoadingToast, showSuccessToast } from 'vant'
+
 import { ResultEnum } from '@/enums/httpEnum'
 import { PageEnum } from '@/enums/pageEnum'
+import { useUserStore } from '@/store/modules/user'
+
+import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
 
 const { setLoginState, getLoginState } = useLoginState()
 const { getFormRules } = useFormRules()
